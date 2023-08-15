@@ -23,4 +23,22 @@ if __name__ == '__main__':
     minimums_2019, minimums_2020, minimums_2021, minimums_2022 = get_minimum_values_dictionaries(monthly_data)
 
 
+    end_consumer_prices = market_prices
+    end_consumer_prices['market price 2019'] = (end_consumer_prices['market price 2019']+14.735)*1.19
+    end_consumer_prices['market price 2020'] = (end_consumer_prices['market price 2020']+14.735)*1.19
+    end_consumer_prices['market price 2021'] = (end_consumer_prices['market price 2021']+14.735)*1.19
+    end_consumer_prices['market price 2022'] = (end_consumer_prices['market price 2022']+14.735)*1.19
+    end_consumer_prices
+    
+    
+    #calculate mean price
+    mean_price_2019 = end_consumer_prices['market price 2019'].mean()
+    mean_price_2019
+
+    #calculate sacvings water boiler
+    _,total_cost_2019, total_savings = savings_of_water_boiler(minimums_2019)
+
+    #calculate savings of EV
+    _,total_cost_euroEV, total_savingsEV = savings_of_electric_vehicle(minimums_2019)
+
 
